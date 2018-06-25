@@ -13,6 +13,10 @@
 		043AC39020DBADFF00EBABD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043AC38F20DBADFF00EBABD8 /* Assets.xcassets */; };
 		043AC39320DBADFF00EBABD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043AC39120DBADFF00EBABD8 /* LaunchScreen.storyboard */; };
 		043AC39620DBADFF00EBABD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 043AC39520DBADFF00EBABD8 /* main.m */; };
+		0445FF3D20DCA7590036F815 /* FLHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445FF3C20DCA7590036F815 /* FLHTabBarController.m */; };
+		0445FF4020DCD6CA0036F815 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445FF3F20DCD6CA0036F815 /* HomeViewController.m */; };
+		0445FF4320DCF2D90036F815 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445FF4220DCF2D90036F815 /* MineViewController.m */; };
+		0479824820E079E400F6B1C2 /* FLHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479824720E079E400F6B1C2 /* FLHNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		043AC39220DBADFF00EBABD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043AC39420DBADFF00EBABD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		043AC39520DBADFF00EBABD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0445FF3B20DCA7590036F815 /* FLHTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLHTabBarController.h; sourceTree = "<group>"; };
+		0445FF3C20DCA7590036F815 /* FLHTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLHTabBarController.m; sourceTree = "<group>"; };
+		0445FF3E20DCD6CA0036F815 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0445FF3F20DCD6CA0036F815 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0445FF4120DCF2D90036F815 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		0445FF4220DCF2D90036F815 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		0479824620E079E400F6B1C2 /* FLHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLHNavigationController.h; sourceTree = "<group>"; };
+		0479824720E079E400F6B1C2 /* FLHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLHNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +70,15 @@
 		043AC38520DBADFD00EBABD8 /* FLHTabbarViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0445FF3720DC9EE30036F815 /* FLHNav */,
 				043AC38620DBADFD00EBABD8 /* AppDelegate.h */,
 				043AC38720DBADFD00EBABD8 /* AppDelegate.m */,
 				043AC38920DBADFD00EBABD8 /* ViewController.h */,
 				043AC38A20DBADFD00EBABD8 /* ViewController.m */,
+				0445FF3E20DCD6CA0036F815 /* HomeViewController.h */,
+				0445FF3F20DCD6CA0036F815 /* HomeViewController.m */,
+				0445FF4120DCF2D90036F815 /* MineViewController.h */,
+				0445FF4220DCF2D90036F815 /* MineViewController.m */,
 				043AC38C20DBADFD00EBABD8 /* Main.storyboard */,
 				043AC38F20DBADFF00EBABD8 /* Assets.xcassets */,
 				043AC39120DBADFF00EBABD8 /* LaunchScreen.storyboard */,
@@ -69,6 +86,17 @@
 				043AC39520DBADFF00EBABD8 /* main.m */,
 			);
 			path = FLHTabbarViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		0445FF3720DC9EE30036F815 /* FLHNav */ = {
+			isa = PBXGroup;
+			children = (
+				0479824620E079E400F6B1C2 /* FLHNavigationController.h */,
+				0479824720E079E400F6B1C2 /* FLHNavigationController.m */,
+				0445FF3B20DCA7590036F815 /* FLHTabBarController.h */,
+				0445FF3C20DCA7590036F815 /* FLHTabBarController.m */,
+			);
+			path = FLHNav;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +170,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				043AC38B20DBADFD00EBABD8 /* ViewController.m in Sources */,
+				0445FF4320DCF2D90036F815 /* MineViewController.m in Sources */,
+				0479824820E079E400F6B1C2 /* FLHNavigationController.m in Sources */,
+				0445FF3D20DCA7590036F815 /* FLHTabBarController.m in Sources */,
 				043AC39620DBADFF00EBABD8 /* main.m in Sources */,
 				043AC38820DBADFD00EBABD8 /* AppDelegate.m in Sources */,
+				0445FF4020DCD6CA0036F815 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 973U6QM2DQ;
 				INFOPLIST_FILE = FLHTabbarViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 973U6QM2DQ;
 				INFOPLIST_FILE = FLHTabbarViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

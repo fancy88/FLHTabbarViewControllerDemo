@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "HomeViewController.h"
+#import "MineViewController.h"
+#import "FLHNavigationController.h"
+#import "FLHTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +22,49 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window.frame = [[UIScreen mainScreen] bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    NSString *loginState = [[NSUserDefaults standardUserDefaults] objectForKey:@"LoginStateLocalSave"];
+    if (loginState == nil || loginState.length == 0) {
+        [self gotoLoginAPP];
+    }else{
+        [self gotoAPPHomePage];
+    }
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
+- (void)gotoAPPHomePage{
+    
+    HomeViewController *HomeVC = [[HomeViewController alloc] init];
+    UIImage *homeImage = [UIImage imageNamed:@"icon_message_gray"];
+    UIImage *homeSelectImage = [UIImage imageNamed:@"icon_message_green"];
+    homeImage = [homeImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeSelectImage = [homeSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UITabBarItem *homeBarItem = [[UITabBarItem alloc] initWithTitle:@"主页" image:homeImage selectedImage:homeSelectImage];
+    HomeVC.tabBarItem = homeBarItem;
+    FLHNavigationController *homeNav = [[FLHNavigationController alloc] initWithRootViewController:HomeVC];
+    
+    MineViewController *MineVC = [[MineViewController alloc] init];
+    UIImage *mineImage = [UIImage imageNamed:@"icon_my_gray"];
+    UIImage *mineSelectImage = [UIImage imageNamed:@"icon_my_green"];
+    mineImage = [mineImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mineSelectImage = [mineSelectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UITabBarItem *mineBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:mineImage selectedImage:mineSelectImage];
+    MineVC.tabBarItem = mineBarItem;
+    FLHNavigationController *mineNav = [[FLHNavigationController alloc] initWithRootViewController:MineVC];
+    
+    FLHTabBarController *tabBarVC = [[FLHTabBarController alloc] init];
+    tabBarVC.viewControllers = [NSArray arrayWithObjects:homeNav, mineNav, nil];
+    self.window.rootViewController = tabBarVC;
+}
+
+- (void)gotoLoginAPP{
+    ViewController *VC = [[ViewController alloc] init];
+    self.window.rootViewController = VC;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

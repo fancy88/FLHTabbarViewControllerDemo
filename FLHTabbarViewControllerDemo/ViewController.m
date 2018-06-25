@@ -31,6 +31,7 @@
 - (void)loginBtnAction: (UIButton *)button{
     NSLog(@"登录");
     [[NSUserDefaults standardUserDefaults] setObject:@"login" forKey:@"LoginStateLocalSave"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [delegate gotoAPPHomePage];
 }

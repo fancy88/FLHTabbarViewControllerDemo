@@ -33,7 +33,8 @@
 
 - (void)exitBtnAction: (UIButton *)button{
     NSLog(@"退出登录");
-    [[NSUserDefaults standardUserDefaults] setObject:@"login" forKey:@""];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"LoginStateLocalSave"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [delegate gotoLoginAPP];
 }

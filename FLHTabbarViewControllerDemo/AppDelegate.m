@@ -58,6 +58,7 @@
     
     FLHTabBarController *tabBarVC = [[FLHTabBarController alloc] init];
     tabBarVC.viewControllers = [NSArray arrayWithObjects:homeNav, mineNav, nil];
+ //   [tabBarVC setSelectedIndex:0];
     self.window.rootViewController = tabBarVC;
 }
 
